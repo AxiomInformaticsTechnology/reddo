@@ -1,0 +1,1 @@
+# Aidos Resource Module

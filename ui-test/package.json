@@ -1,0 +1,23 @@
+{
+  "name": "ui-test",
+  "version": "1.0.0",
+  "description": "UI Test",
+  "main": "test.js",
+  "dependencies": {
+    "cas-authentication": "0.0.8",
+    "cookie-parser": "1.4.3",
+    "express": "4.14.1",
+    "express-session": "^1.15.1",
+    "https": "1.0.0",
+    "jquery": "3.1.1",
+    "jquery.cookie": "1.4.1",
+    "pem": "1.9.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node test.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

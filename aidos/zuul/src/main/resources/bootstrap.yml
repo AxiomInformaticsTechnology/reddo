@@ -1,0 +1,9 @@
+spring:
+  aop:
+    proxyTargetClass: true
+  application:
+    name: aidos-zuul
+  cloud:
+    config:
+      enabled: true
+      uri: https://localhost:8888

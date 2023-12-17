@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: aidos-resource
+  cloud:
+    config:
+      enabled: true
+      uri: https://localhost:8888

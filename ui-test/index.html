@@ -1,0 +1,27 @@
+<head>
+    <title>UI Test</title>
+    <script src="/jquery/jquery.min.js"></script>
+    <script src="/jquery.cookie/jquery.cookie.js"></script>
+</head>
+<body>
+    <a href="https://192.168.1.4:8765/login" id="login">Login</a>
+    <span style="cursor: pointer; color:blue; text-decoration:underline;" id="test">Test</span>
+    <div class="result">
+    </div>
+    <script>
+        $('#test').click(function() {
+            $.ajax({
+                url: "https://192.168.1.4:8765/dam/test/greetings",
+                dataType: "json",
+                crossDomain: true,
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function( response ) {
+                    console.log(response);
+                    $( ".result" ).html( response.message );
+                }
+            });
+        });
+    </script>
+</body>

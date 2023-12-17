@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: aidos-config
+  profiles:
+    active: native
+  cloud:
+    config:
+      enabled: true
+      uri: https://localhost:8888
+      server:
+        native:
+          searchLocations: classpath:/config

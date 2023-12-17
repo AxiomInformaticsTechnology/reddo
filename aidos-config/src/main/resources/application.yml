@@ -1,0 +1,61 @@
+server:
+  port: 8888
+  ssl:
+    enabled: true
+    key-alias: aidos-ssl-key
+    key-store: keystore.jks
+    key-store-type: PKCS12
+    key-store-password: aidos-store-secret
+  error:
+    whitelabel:
+      enabled: false
+
+management:
+  security:
+    enabled: false
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+eureka:
+  instance:
+    hostname: localhost
+    secure-port: 8761
+    secure-port-enabled: true
+    non-secure-port-enabled: false
+    prefer-ip-address: true 
+    statusPageUrl: https://localhost:${server.port}/info
+    healthCheckUrl: https://localhost:${server.port}/health
+    homePageUrl: https://localhost:${server.port}/
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: https://${eureka.instance.hostname}:${eureka.instance.secure-port}/eureka
+
+security:
+  basic:
+    enabled: false
+  user:
+    password: 81d56928-891a-41b2-8dd2-132593e6d057
+
+logging:
+  path: /var/log
+  file: aidos-config.log
+  level:
+    org.hibernate: INFO
+    org.springframework: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.boot.actuate.audit.listener.AuditListener: INFO
+
+info:
+  build:
+    artifact: ${project.artifactId}
+    name: ${project.name}
+    description: ${project.description}
+    version: ${project.version}    
